@@ -9,7 +9,7 @@ const ACCEPTED_ORIGINS = [
   '*'
 ]
 
-export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => cors({
+export const corsMiddleware = ({ acceptedOrigins = Access-Control-Allow-Origin } = {}) => cors({
   origin: (origin, callback) => {
     if (acceptedOrigins.includes(origin)) {
       return callback(null, true)
