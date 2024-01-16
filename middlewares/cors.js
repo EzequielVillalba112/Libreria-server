@@ -5,7 +5,7 @@ const ACCEPTED_ORIGINS = [
   'http://localhost:1234',
   'https://ezequielvillalba112.github.io/',
   'https://ezequielvillalba112.github.io/Libreria/',
-  
+  'https://ejemp-1.000webhostapp.com/'
 ]
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => cors({
