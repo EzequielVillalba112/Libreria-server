@@ -3,7 +3,7 @@ import cors from 'cors'
 const ACCEPTED_ORIGINS = [
   'http://localhost:5173',
   'http://localhost:1234',
-  'https://biblioteca.com',
+  'https://ezequielvillalba112.github.io/',
 ]
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) => cors({
