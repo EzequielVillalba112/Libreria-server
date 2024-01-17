@@ -1,24 +1,8 @@
 import cors from 'cors'
 
-const ACCEPTED_ORIGINS = [
-  'http://localhost:5173',
-  'http://localhost:1234',
-  'https://ezequielvillalba112.github.io/',
-  'https://ezequielvillalba112.github.io/Libreria/',
-  'https://ejemp-1.000webhostapp.com/',
-  '*'
-]
-
-export const corsMiddleware = ({ acceptedOrigins = Access-Control-Allow-Origin } = {}) => cors({
-  origin: (origin, callback) => {
-    if (acceptedOrigins.includes(origin)) {
-      return callback(null, true)
-    }
-
-    if (!origin) {
-      return callback(null, true)
-    }
-
-    return callback(new Error('Not allowed by CORS'))
-  }
-})
+export const corsMiddleware = () => cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Puedes ajustar los métodos permitidos según tus necesidades
+  allowedHeaders: ['Content-Type', 'Authorization'], // Encabezados permitidos
+  credentials: true, // Habilitar el envío de cookies de manera segura (si es necesario)
+});
